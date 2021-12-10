@@ -41,7 +41,7 @@ def get_chute(letraChute):
         if len(chute) != 1:
             print(f'Por favor, digite apenas uma letra!')
         elif chute in letraChute:
-            print(f'Ahh, essa você já chutou! Tente outra...')
+            print(f'Ah, essa você já chutou! Tente outra...')
         elif chute not in 'abcdefghijklmnopqrstuvwxyz':
             print(f'Por favor, digite uma letra!')
         else:
