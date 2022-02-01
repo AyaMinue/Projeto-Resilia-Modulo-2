@@ -6,7 +6,7 @@ import os
 import desenho
 
 
-
+# Função feita para criar jogador,  pede para que o usuario crie seu próprio login.
 os.system("cls")
 def cria_jogador(nome,palavra):
     return{
@@ -21,6 +21,7 @@ def cria_jogador(nome,palavra):
 lista_palavras = ['programar', 'computador', 'tecnologia', 'internet', 'input', 'output', 'analise', 'mouse', 'hardware',
                   'desenvolvedor', 'debugar', 'armazenamento', 'dados', 'hacker', 'projeto','java', 'python', 'linguagem', 'deadline', 'codar']
 
+# função que sorteia as palavras de acordo com as palavaras existentes dentro da lista acima.
 def sorteia_palavra(lista_palavras):
     palavra = random.choice(lista_palavras)
     return palavra
@@ -28,18 +29,20 @@ def sorteia_palavra(lista_palavras):
 
 # print(sorteia_palavra(lista_palavras))
 
+
+# parte de escolha do jogo, para escolher o multiplayer e definir jogadores.
 total_jogadores = int(input("Quantos jogadores: "))
 lista_de_jogadores=[]
 
 
-
+# parte que sorteia a palavra para cada jogador, e vai adicionando os jogadores dentro da lista.
 for i in range(total_jogadores):
     nome = input("qual o nome do jogador?")
     palavra = sorteia_palavra(lista_palavras)
     lista_de_jogadores.append(cria_jogador(nome,palavra))
 
 
-
+# função chamada na hora de jogar, nela faz o processo de contagem de acertos e erros no jogo e caso alguém erre ele muda simultaneamente para o próximo jogador.
 def jogo(lista_de_jogadores,id):
     jogador_jogando = lista_de_jogadores[id]
     if jogador_jogando["erros"]<7 :
@@ -95,7 +98,7 @@ def jogo(lista_de_jogadores,id):
     
 
 
-
+# parte que escolhe se quer continuar jogando.
 id = 0
 continua = True
 while continua:
