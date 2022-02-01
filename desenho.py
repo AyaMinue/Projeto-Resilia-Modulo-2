@@ -1,44 +1,86 @@
+import os
+import time
 
 def desenho_forca(index):
         forca = """
-        ______
-                | 
-                |
-                _
+         ____
+        |
+        |         
+        |        
+       _|_       
         """
         vazio = """ 
 
 
         """
         morreu ="""
-        morreu
+        ################################################
+         ____
+        |   O      
+        |  /|\\
+        |  / \     
+       _|_ 
+       ################### Morreu #####################
         """
         cabeca ="""
-                O
+         ____
+        |    O      
+        |
+        |        
+       _|_ 
         """
         tronco = """
-                O
-                |
+         ____
+        |    O     
+        |    |
+        |        
+       _|_   
         """
         braco_esquerdo = """
-                O
-                /|
+         ____
+        |   O      
+        |  /|
+        |       
+       _|_                      
         """
         braco_direito = """
-                O
-                /|\\
+         ___
+        |   O      
+        |  /|\\
+        |       
+       _|_                  
         """
         perna_esquerda = """
-                O
-                /|\\
-                /
+         ___
+        |   O      
+        |  /|\\
+        |  /    
+       _|_ 
         """
         perna_direita = """
-                O
-                /|\\
-                / \\
+         ___
+        |   O      
+        |  /|\\
+        |  / \     
+       _|_ 
         """
-        chances_boneco = [vazio , cabeca,tronco, braco_esquerdo,braco_direito,perna_esquerda,perna_direita,morreu]
+        chances_boneco = [forca , cabeca,tronco, braco_esquerdo,braco_direito,perna_esquerda,perna_direita,morreu]
         # [ morreu, perna_direita, perna_esquerda, braco_direito, braco_esquerdo, tronco, cabeca, vazio]
 
         print(chances_boneco[index])
+
+## Mostra a mensagem de vencedor
+def venceu(jogador_jogando):
+        os.system("cls")
+        venceu =f"""
+            ############# PARÁBENS {jogador_jogando["nome"].upper()} #############
+        ################### VOCÊ ACERTOU A PALAVRA ############################# 
+
+          \O/      
+           |
+          / \     
+        
+        """
+        print(venceu)
+        time.sleep(5)
+        # os.system("cls")
